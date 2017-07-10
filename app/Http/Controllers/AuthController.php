@@ -24,7 +24,7 @@ class AuthController extends BaseController
 
         if (Auth::attempt(['usuario'=>$usuario, 'password'=>$password]))
         {
-            return redirect('hidden');
+            return redirect('/eventos');
         }
 
         return back()->with('msg', 'Datos incorrectos, vuelve a intentarlo.');
@@ -33,7 +33,7 @@ class AuthController extends BaseController
     public function doLogout()
     {
         Auth::logout();
-        return redirect('/')->with('msg', 'Gracias por visitarnos!.');
+        return redirect('/login')->with('msg', 'Gracias por visitarnos!.');
     }
 
 
