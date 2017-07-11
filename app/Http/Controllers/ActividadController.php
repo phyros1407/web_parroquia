@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Validation\Rules\In;
 
 class ActividadController extends Controller {
 
@@ -29,16 +30,18 @@ class ActividadController extends Controller {
 
     }
 
-    public function editar($id_actividad, $id_evento){
+    public function editar(){
 
+        $id_actividad = Input::get('id_actividad');
+        $id_evento = Input::get('id_evento');
         $titulo = Input::get('titulo');
         $descripcion = Input::get('descripcion');
         $fecha_inicio = Input::get('fec_ini');
         $fecha_fin = Input::get('fec_fin');
 
-        DB::table('t_evento')
+        DB::table('t_actividad')
             ->where('id', $id_actividad)
-            ->update (array('titulo' => $titulo, 'descripcion' => $descripcion,'inicio'=>$fecha_inicio, 'fin'=>$fecha_fin));
+            ->update (array('titulo' => $titulo, 'descripcion' => $descripcion,'inicio'=>date('Y-m-d',strtotime($fecha_inicio)), 'fin'=>date('Y-m-d',strtotime($fecha_fin))));
 
         return redirect('/actividades_evento/'.$id_evento);
 
@@ -52,8 +55,12 @@ class ActividadController extends Controller {
         $fecha_inicio = Input::get('fec_ini');
         $fecha_fin = Input::get('fec_fin');
 
+
+
+        print $fecha_inicio;
+
         $id = DB::table('t_actividad')->insertGetId(
-            array('titulo' => $titulo, 'descripcion' => $descripcion,'id_evento'=>$id_evento ,'inicio'=>$fecha_inicio, 'fin'=>$fecha_fin)
+            array('titulo' => $titulo, 'descripcion' => $descripcion,'id_evento'=>$id_evento,'inicio'=>date('Y-m-d',strtotime($fecha_inicio)), 'fin'=>date('Y-m-d',strtotime($fecha_fin)))
         );
 
         return redirect('/actividades_evento/'.$id_evento);

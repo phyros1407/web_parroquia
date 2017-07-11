@@ -7,15 +7,17 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
         <script src="{{asset('js/mis_js.js')}}"></script>
+        <script src="{{asset('js/bootstrap-clockpicker.min.js')}}"></script>
+        <script src="{{asset('js/jquery-clockpicker.min.js')}}"></script>
+        <script src="{{asset('locales/bootstrap-datepicker.es.min.js')}}"></script>
+
         <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
-        <link rel="stylesheet" href="{{asset('locales/bootstrap-datepicker.es.min.js')}}">
         <link rel="stylesheet" href="{{asset('css/mis_estilos.css')}}">
-        <style>
+        <link rel="stylesheet" href="{{asset('css/bootstrap-clockpicker.css')}}">
 
-
-        </style>
     </head>
     <body>
         @section('header')

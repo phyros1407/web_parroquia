@@ -33,3 +33,20 @@ $(document).ready(function (e) {
         $(e.currentTarget).find('#descripcion2').val(descripcion);
     });
 });
+
+$(document).ready(function (e) {
+    $('#myModal4').on('show.bs.modal', function(e) {
+
+        var id = $(e.relatedTarget).data().id;
+        var titulo = $(e.relatedTarget).data().titulo;
+        var descripcion = $(e.relatedTarget).data().descripcion;
+        var inicio = $(e.relatedTarget).data().inicio;
+        var fin = $(e.relatedTarget).data().fin;
+
+        $(e.currentTarget).find('#id_actividad2').val(id);
+        $(e.currentTarget).find('#titulo3').val(titulo);
+        $(e.currentTarget).find('#descripcion3').val(descripcion);
+        $(e.currentTarget).find('#inicio3').val(inicio);
+        $(e.currentTarget).find('#fin3').val(fin);
+    });
+});

@@ -17,5 +17,7 @@ Route::get('/desa_evento/{id_evento}', 'EventoController@desactivar');
 Route::get('/acti_evento/{id_evento}', 'EventoController@activar');
 
 //CRUD ACTIVIDAD
+Route::post('/crear_actividad', 'ActividadController@crear');
+Route::post('/editar_actividad', 'ActividadController@editar');
 Route::get('/actividades_evento/{id_evento}','ActividadController@listar');
 Route::get('/acti_eli/{id_actividad}/{id_evento}','ActividadController@eliminar');
