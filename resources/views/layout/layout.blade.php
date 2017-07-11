@@ -54,6 +54,19 @@
                     }
                 }
             }
+
+            $(document).ready(function (e) {
+                $('#myModal2').on('show.bs.modal', function(e) {
+
+                    var id = $(e.relatedTarget).data().id;
+                    var titulo = $(e.relatedTarget).data().titulo;
+                    var descripcion = $(e.relatedTarget).data().descripcion;
+
+                    $(e.currentTarget).find('#id_evento2').val(id);
+                    $(e.currentTarget).find('#titulo2').val(titulo);
+                    $(e.currentTarget).find('#descripcion2').val(descripcion);
+                });
+            });
         </script>
 
     </head>
