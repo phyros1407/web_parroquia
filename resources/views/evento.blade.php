@@ -14,7 +14,7 @@
                        <button type="button" class="form-control" data-toggle="modal" data-target="#myModal">Agregar Evento</button>
                    </div>
                    <div class="col-sm-9" align="right">
-                       <input type="text" class="form-control" id="buscador" placeholder="Ingrese titulo, estado, ..." onkeyup="myFunction()">
+                       <input type="text" class="form-control" id="buscador" placeholder="Ingrese titulo" onkeyup="myFunction()">
                    </div>
                </div>
                <br>

@@ -7,68 +7,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
+        <script src="{{asset('js/mis_js.js')}}"></script>
+        <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
+        <link rel="stylesheet" href="{{asset('locales/bootstrap-datepicker.es.min.js')}}">
+        <link rel="stylesheet" href="{{asset('css/mis_estilos.css')}}">
         <style>
-            #buscador {
-                width: 130px;
-                box-sizing: border-box;
-                border: 2px solid #ccc;
-                border-radius: 4px;
-                font-size: 16px;
-                background-color: white;
-                background-image: url({{asset('images/buscador.png')}});
-                background-position: 10px 10px;
-                background-repeat: no-repeat;
-                -webkit-transition: width 0.4s ease-in-out;
-                transition: width 0.4s ease-in-out;
-            }
 
-            #buscador:focus {
-                width: 40%;
-            }
 
-            a:hover {
-                background-color: white;
-                color: #000;
-            }
-            #icono:hover{
-                background-color: white;
-                color: #000;
-            }
         </style>
-        <script>
-            function myFunction() {
-                var input, filter, table, tr, td, i;
-                input = document.getElementById("buscador");
-                filter = input.value.toUpperCase();
-                table = document.getElementById("myTable");
-                tr = table.getElementsByTagName("tr");
-                for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[0];
-                    if (td) {
-                        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
-                        } else {
-                            tr[i].style.display = "none";
-                        }
-                    }
-                }
-            }
-
-            $(document).ready(function (e) {
-                $('#myModal2').on('show.bs.modal', function(e) {
-
-                    var id = $(e.relatedTarget).data().id;
-                    var titulo = $(e.relatedTarget).data().titulo;
-                    var descripcion = $(e.relatedTarget).data().descripcion;
-
-                    $(e.currentTarget).find('#id_evento2').val(id);
-                    $(e.currentTarget).find('#titulo2').val(titulo);
-                    $(e.currentTarget).find('#descripcion2').val(descripcion);
-                });
-            });
-        </script>
-
     </head>
     <body>
         @section('header')

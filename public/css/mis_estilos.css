@@ -1,0 +1,25 @@
+#buscador {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../images/buscador.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+#buscador:focus {
+    width: 40%;
+}
+
+a:hover {
+    background-color: white;
+    color: #000;
+}
+#icono:hover{
+    background-color: white;
+    color: #000;
+}

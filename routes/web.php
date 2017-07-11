@@ -18,3 +18,4 @@ Route::get('/acti_evento/{id_evento}', 'EventoController@activar');
 
 //CRUD ACTIVIDAD
 Route::get('/actividades_evento/{id_evento}','ActividadController@listar');
+Route::get('/acti_eli/{id_actividad}/{id_evento}','ActividadController@eliminar');

@@ -12,7 +12,7 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-3">
-                        <button type="button" class="form-control" data-toggle="modal" data-target="#myModal">Agregar Actividad</button>
+                        <button type="button" class="form-control" data-toggle="modal" data-target="#myModal3">Agregar Actividad</button>
                     </div>
                     <div class="col-sm-9" align="right">
                         <input type="text" class="form-control" id="buscador" placeholder="Ingrese titulo, estado, ..." onkeyup="myFunction()">
@@ -35,10 +35,16 @@
                             <tr>
                                 <td>{{$actividad->titulo}}</td>
                                 <td>{{$actividad->descripcion}}</td>
-                                <td style="text-align: center;">{{$actividad->inicio}}</td>
-                                <td style="text-align: center;">{{$actividad->fin}}</td>
+                                <td style="text-align: center;">
+                                    {{date('d-m-Y',strtotime($actividad->inicio))}}<br>
+                                    {{date('H:i',strtotime($actividad->inicio))}}
+                                </td>
+                                <td style="text-align: center;">
+                                    {{date('d-m-Y',strtotime($actividad->fin))}}<br>
+                                    {{date('H:i',strtotime($actividad->inicio))}}
+                                </td>
                                 <td  style="text-align: center;"><button class="btn-link" data-id="{{$actividad->id}}" data-titulo="{{$actividad->titulo}}" data-descripcion="{{$actividad->descripcion}}" data-toggle="modal" data-target="#myModal2">Editar</button></td>
-                                <td  style="text-align: center;"><a href="/acti_evento/{{$actividad->id}}">Activar</a></td>
+                                <td  style="text-align: center;"><a href="/acti_eli/{{$actividad->id}}/{{$id_evento}}">Eliminar</a></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -51,3 +57,4 @@
 
 @endsection
 
+@extends('modals.crear_actividad')

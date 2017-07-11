@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class T_actividad extends Model  {
 
+    use DatesTranslator;
+
     /**
      * The database table used by the model.
      *
