@@ -3,48 +3,85 @@
     <head>
         <meta charset="UTF-8">
         <title>@yield('title') | Familia Don de Dios</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <link rel="stylesheet" href="{{asset('css/palette.css')}}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            #buscador {
+                width: 130px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                background-color: white;
+                background-image: url({{asset('images/buscador.png')}});
+                background-position: 10px 10px;
+                background-repeat: no-repeat;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
+            }
+
+            #buscador:focus {
+                width: 40%;
+            }
+
+            a:hover {
+                background-color: white;
+                color: #000;
+            }
+            #icono:hover{
+                background-color: white;
+                color: #000;
+            }
+        </style>
+        <script>
+            function myFunction() {
+                var input, filter, table, tr, td, i;
+                input = document.getElementById("buscador");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
+
     </head>
     <body>
         @section('header')
-            <div class="mdl-layout mdl-js-layout ">
-                <header class="mdl-layout__header mdl-layout__header--scroll default-primary-color mdl-shadow--4dp">
-                    <div class="mdl-layout__header-row">
-                        <!-- Title -->
-                        <span class="mdl-layout-title">@yield('title') | Familia Don de Dios</span>
-                        <!-- Add spacer, to align navigation to the right -->
-                        <div class="mdl-layout-spacer"></div>
-                        <!-- Navigation -->
-                        <nav class="mdl-navigation">
-                            <a class="mdl-navigation__link" href="/home">Eventos</a>
-                            <a class="mdl-navigation__link" href="">Link</a>
-                            <a class="mdl-navigation__link" href="">Link</a>
-                            <a class="mdl-navigation__link" href="">Link</a>
-                        </nav>
+            <nav class="navbar default-primary-color">
+                <div class="container-fluid ">
+                    <div class="navbar-header ">
+                        <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand text-primary-color" href="#">Familia Don de Dios</a>
                     </div>
-                </header>
-                <div class="mdl-layout__drawer">
-                    <span class="mdl-layout-title">Title</span>
-                    <nav class="mdl-navigation">
-                        <a class="mdl-navigation__link" href="">Link</a>
-                        <a class="mdl-navigation__link" href="">Link</a>
-                        <a class="mdl-navigation__link" href="">Link</a>
-                        <a class="mdl-navigation__link" href="">Link</a>
-                    </nav>
+                    <div class="collapse navbar-collapse" id="myNavbar" >
+                        <ul class="nav navbar-nav ">
+                            <li class="active "><a href="#" class="text-primary-color">Home</a></li>
+                            <li><a href="/eventos" class="text-primary-color">Eventos</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/logout" class="text-primary-color" id="icono"><span id="icono" class="glyphicon glyphicon-log-out text-primary-color"></span> Salir</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <main class="mdl-layout__content">
-                    <div class="page-content">
-
-
-                        <div class="container">
-                            @yield('content')
-                        </div>
-
-                    </div>
-                </main>
+            </nav>
+            <div class="">
+                @yield('content')
             </div>
         @show
 

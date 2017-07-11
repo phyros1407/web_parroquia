@@ -6,22 +6,36 @@
  * Time: 17:42
  */
     namespace App\Http\Controllers;
-    use Illuminate\Contracts\Session\Session;
     use Illuminate\Routing\Controller;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\DB;
+    use Illuminate\Support\Facades\Input;
 
     class EventoController extends Controller {
 
         public function listar(){
 
-            $id_persona = Session::get('id_persona');
+            $id_persona = Auth::user()->id_persona;
 
-            $id_parroquia = DB::table('t_clerigo')->where('id_sacerdote',$id_persona)->first();
-            $eventos = DB::table('t_evento')->where('id_parroquia', 1)->get();
+            $resultado = DB::table('t_clerigo')->where('id_sacerdote',$id_persona)->first();
 
-            return view('evento')->with(['eventos'=>$eventos]);
-            //return view('eventos')->with(['eventos'=>$eventos]);
+            $eventos = DB::table('t_evento')->where('id_parroquia', $resultado->id_parroquia)->get();
+
+            return view('evento')->with(['eventos'=>$eventos, 'id_parroquia'=> $resultado->id_parroquia]);
+        }
+
+        public function crear(){
+
+            $titulo = Input::get('titulo');
+            $descripcion = Input::get('descripcion');
+            $id_parroquia = Input::get('id_parroquia');
+
+            $id = DB::table('t_evento')->insertGetId(
+                array('titulo' => $titulo, 'descripcion' => $descripcion,'id_parroquia'=>$id_parroquia ,'estado'=>'A')
+            );
+
+            return view('evento');
+
         }
 
     }
