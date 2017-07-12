@@ -39,6 +39,8 @@ class ActividadController extends Controller {
         $fecha_inicio = Input::get('fec_ini');
         $fecha_fin = Input::get('fec_fin');
 
+        print $fecha_fin;
+
         DB::table('t_actividad')
             ->where('id', $id_actividad)
             ->update (array('titulo' => $titulo, 'descripcion' => $descripcion,'inicio'=>date('Y-m-d',strtotime($fecha_inicio)), 'fin'=>date('Y-m-d',strtotime($fecha_fin))));
