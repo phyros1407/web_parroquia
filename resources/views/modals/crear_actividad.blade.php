@@ -19,10 +19,45 @@
                     <textarea class="form-control" name="descripcion" id="" cols="30" rows="10"></textarea>
                     <br>
                     <label for="datepicker">Fechas</label>
-                    <div class="input-daterange input-group fj-date" id="datepicker">
+                    <!--<div class="input-daterange input-group fj-date" id="datepicker">
                         <input type="text" class="input-sm form-control" name="fec_ini" />
                         <span class="input-group-addon">a</span>
                         <input type="text" class="input-sm form-control" name="fec_fin" />
+                    </div>-->
+                    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+                    <script>
+                        webshims.setOptions('forms-ext', {types: 'date'});
+                        webshims.polyfill('forms forms-ext');
+                    </script>
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <label for=""><strong >DE</strong></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="date" name="fec_ini"/>
+                        </div>
+                        <div class="col-sm-1">
+                            <label for=""><strong>A</strong></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="date" name="fec_fin"/>
+                        </div>
+                    </div>
+                    <br>
+                    <label for="datepicker">Horas</label>
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <label for=""><strong >DE</strong></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control"  list="listaimitestiempo" type="time" name="hor_ini"/>
+                        </div>
+                        <div class="col-sm-1">
+                            <label for=""><strong>A</strong></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control"  list="listaimitestiempo" type="time" name="hor_fin"/>
+                        </div>
                     </div>
                     <br>
                 </form>

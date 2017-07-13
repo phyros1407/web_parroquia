@@ -20,10 +20,24 @@
                     <textarea class="form-control" name="descripcion" id="descripcion3" cols="30" rows="10"></textarea>
                     <br>
                     <label for="datepicker">Fechas</label>
-                    <div class="input-daterange input-group fj-date" id="datepicker">
-                        <input type="text" class="input-sm form-control" name="fec_ini" id="inicio3"/>
-                        <span class="input-group-addon">a</span>
-                        <input type="text" class="input-sm form-control" name="fec_fin" id="fin3"/>
+                    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+                    <script>
+                        webshims.setOptions('forms-ext', {types: 'date'});
+                        webshims.polyfill('forms forms-ext');
+                    </script>
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <label for=""><strong >DE</strong></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="date" name="fec_ini2" id="inicio3"/>
+                        </div>
+                        <div class="col-sm-1">
+                            <label for=""><strong>A</strong></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="date" name="fec_fin2" id="fin3"/>
+                        </div>
                     </div>
                     <br>
                 </form>
@@ -36,3 +50,29 @@
 
     </div>
 </div>
+<datalist id="listaimitestiempo">
+    <option value="01:00">
+    <option value="02:00">
+    <option value="03:00">
+    <option value="04:00">
+    <option value="05:00">
+    <option value="06:00">
+    <option value="07:00">
+    <option value="08:00">
+    <option value="09:00">
+    <option value="10:00">
+    <option value="11:00">
+    <option value="12:00">
+    <option value="13:00">
+    <option value="14:00">
+    <option value="15:00">
+    <option value="16:00">
+    <option value="17:00">
+    <option value="18:00">
+    <option value="19:00">
+    <option value="20:00">
+    <option value="21:00">
+    <option value="22:00">
+    <option value="23:00">
+    <option value="24:00">
+</datalist>

@@ -14,6 +14,11 @@
 
     class EventoController extends Controller {
 
+        public function __construct()
+        {
+
+        }
+
         public function listar(){
 
             $id_persona = Auth::user()->id_persona;

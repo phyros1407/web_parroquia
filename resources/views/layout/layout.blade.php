@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
         <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
         <script src="{{asset('js/mis_js.js')}}"></script>
         <script src="{{asset('js/bootstrap-clockpicker.min.js')}}"></script>
@@ -24,12 +25,10 @@
             <nav class="navbar default-primary-color">
                 <div class="container-fluid ">
                     <div class="navbar-header ">
-                        <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
+                        <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#myNavbar" style="background-color: #FF9800;margin-top: 15px">
+                            <span class="navbar-toggler-icon"></span>
                         </button>
-                        <a class="navbar-brand text-primary-color" href="#">Familia Don de Dios</a>
+                        <a class="navbar-brand" style="color: white;" href="#">Familia Don de Dios</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar" >
                         <ul class="nav navbar-nav ">

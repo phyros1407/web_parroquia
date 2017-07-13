@@ -11,7 +11,7 @@
                <br>
                <div class="row">
                    <div class="col-sm-3">
-                       <button type="button" class="form-control" data-toggle="modal" data-target="#myModal">Agregar Evento</button>
+                       <button type="button" class="form-control" data-toggle="modal" data-target="#myModal" style="height: auto;background-color: #FF9800;color: white;">Agregar Evento</button>
                    </div>
                    <div class="col-sm-9" align="right">
                        <input type="text" class="form-control" id="buscador" placeholder="Ingrese titulo" onkeyup="myFunction()">

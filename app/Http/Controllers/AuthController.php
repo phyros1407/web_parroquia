@@ -33,7 +33,7 @@ class AuthController extends BaseController
     public function doLogout()
     {
         Auth::logout();
-        return redirect('/login')->with('msg', 'Gracias por visitarnos!.');
+        return redirect('/')->with('msg', 'Gracias por visitarnos!.');
     }
 
 
