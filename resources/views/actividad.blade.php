@@ -19,7 +19,7 @@
             <br>
             @if($actividades!=null)
                 <div class="table-responsive">
-                    <table class="table table-bordered" >
+                    <table class="table table-bordered scrollit" >
                         <thead class="default-primary-color text-primary-color">
                         <tr>
                             <td><strong>Titulo</strong></td>
@@ -42,7 +42,7 @@
                                     {{date('d-m-Y',strtotime($actividad->fin))}}<br>
                                     {{date('H:i',strtotime($actividad->fin))}}
                                 </td>
-                                <td  style="text-align: center;"><button class="btn-link" data-id="{{$actividad->id}}" data-inicio="{{date('Y-m-d',strtotime($actividad->inicio))}}" data-fin="{{date('Y-m-d',strtotime($actividad->fin))}}" data-titulo="{{$actividad->titulo}}" data-descripcion="{{$actividad->descripcion}}" data-toggle="modal" data-target="#myModal4">Editar</button></td>
+                                <td  style="text-align: center;"><button class="btn-link" data-id="{{$actividad->id}}" data-inicio="{{date('Y-m-d',strtotime($actividad->inicio))}}" data-fin="{{date('Y-m-d',strtotime($actividad->fin))}}" data-titulo="{{$actividad->titulo}}" data-descripcion="{{$actividad->descripcion}}" data-hinicio="{{date('H:i',strtotime($actividad->inicio))}}" data-hfin="{{date('H:i',strtotime($actividad->fin))}}" data-toggle="modal" data-target="#myModal4">Editar</button></td>
                                 <td  style="text-align: center;"><a href="/acti_eli/{{$actividad->id}}/{{$id_evento}}">Eliminar</a></td>
                             </tr>
                         @endforeach

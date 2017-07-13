@@ -50,13 +50,12 @@ class ActividadController extends Controller {
         $descripcion = Input::get('descripcion');
         $fecha_inicio = Input::get('fec_ini2');
         $fecha_fin = Input::get('fec_fin2');
-        echo $fecha_inicio;
-        echo $fecha_fin;
-
+        $hora_inicio = Input::get('hor_ini');
+        $hora_fin = Input::get('hor_fin');
 
         DB::table('t_actividad')
             ->where('id', $id_actividad)
-            ->update (array('titulo' => $titulo, 'descripcion' => $descripcion,'inicio'=>$fecha_inicio, 'fin'=>$fecha_fin));
+            ->update (array('titulo' => $titulo, 'descripcion' => $descripcion,'inicio'=>$fecha_inicio." ".$hora_inicio, 'fin'=>$fecha_fin." ".$hora_fin));
 
         return redirect('/actividades_evento/'.$id_evento);
 
@@ -74,8 +73,7 @@ class ActividadController extends Controller {
         $hora_inicio = Input::get('hor_ini');
         $hora_fin = Input::get('hor_fin');
 
-        echo $fecha_inicio;
-        echo $fecha_fin;
+
 
         $id = DB::table('t_actividad')->insertGetId(
             array('titulo' => $titulo, 'descripcion' => $descripcion,'id_evento'=>$id_evento,'inicio'=>$fecha_inicio." ".$hora_inicio, 'fin'=>$fecha_fin." ".$hora_fin)

@@ -28,7 +28,7 @@
                                <td colspan="2" style="text-align: center;"><strong>Opciones</strong></td>
                            </tr>
                        </thead>
-                       <tbody id="myTable">
+                       <tbody id="myTable"  style="overflow:auto;">
                            @foreach($eventos as $evento)
                                <tr>
                                    @if($evento->estado == 'A')

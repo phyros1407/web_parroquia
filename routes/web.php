@@ -12,6 +12,10 @@ Route::post('login',['uses'=>'AuthController@doLogin', 'before' => 'guest']);
 
 Route::group(['middleware' => 'auth'], function(){
 
+    Route::get('/home', function (){
+        return view('home');
+    });
+
     //CRUD EVENTO
     Route::get('/eventos', 'EventoController@listar');
     Route::post('/crear_evento', 'EventoController@crear');

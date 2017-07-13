@@ -32,7 +32,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar" >
                         <ul class="nav navbar-nav ">
-                            <li class="active "><a href="#" class="text-primary-color">Home</a></li>
+                            <li class="active "><a href="/home" class="text-primary-color">Home</a></li>
                             <li><a href="/eventos" class="text-primary-color">Eventos</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -41,10 +41,16 @@
                     </div>
                 </div>
             </nav>
-            <div class="">
-                @yield('content')
-            </div>
-        @show
 
+                @yield('content')
+
+        @show
+        <!--
+        <footer>
+            <div class="container" id="footer">
+                <p style="color: white;">Familia Don de Dios © 2017 VF Consulting S.A.C </p>
+            </div>
+        </footer>
+        -->
     </body>
 </html>

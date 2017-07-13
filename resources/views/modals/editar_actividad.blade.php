@@ -39,6 +39,21 @@
                             <input class="form-control" type="date" name="fec_fin2" id="fin3"/>
                         </div>
                     </div>
+                    <label for="datepicker">Horas</label>
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <label for=""><strong >DE</strong></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control" list="listaimitestiempo" type="time" name="hor_ini" id="hor_ini2"/>
+                        </div>
+                        <div class="col-sm-1">
+                            <label for=""><strong>A</strong></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control"  list="listaimitestiempo" type="time" name="hor_fin" id="hor_fin2"/>
+                        </div>
+                    </div>
                     <br>
                 </form>
             </div>
@@ -51,6 +66,7 @@
     </div>
 </div>
 <datalist id="listaimitestiempo">
+    <option value="00:00">
     <option value="01:00">
     <option value="02:00">
     <option value="03:00">
@@ -74,5 +90,4 @@
     <option value="21:00">
     <option value="22:00">
     <option value="23:00">
-    <option value="24:00">
 </datalist>

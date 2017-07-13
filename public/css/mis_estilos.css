@@ -4,7 +4,6 @@
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    background-color: white;
     background-image: url('../images/buscador.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
@@ -23,4 +22,27 @@ a:hover {
     background-color: white;
     color: #000;
 }
+
+html, body {
+    height: 100%;
+}
+
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:70px;
+    width:100%;
+    background: #607D8B;
+}
+
+#footer{
+    margin-top: 25px;
+}
+
+.scrollit {
+    overflow:scroll;
+    height:100px;
+}
+/* end responsive footer fix */
 

@@ -37,17 +37,23 @@ $(document).ready(function (e) {
 $(document).ready(function (e) {
     $('#myModal4').on('show.bs.modal', function(e) {
 
+
         var id = $(e.relatedTarget).data().id;
         var titulo = $(e.relatedTarget).data().titulo;
         var descripcion = $(e.relatedTarget).data().descripcion;
         var inicio = $(e.relatedTarget).data().inicio;
         var fin = $(e.relatedTarget).data().fin;
+        var hora_inicio =$(e.relatedTarget).data().hinicio;
+        var hora_fin =$(e.relatedTarget).data().hfin;
+
 
         $(e.currentTarget).find('#id_actividad2').val(id);
         $(e.currentTarget).find('#titulo3').val(titulo);
         $(e.currentTarget).find('#descripcion3').val(descripcion);
         $(e.currentTarget).find('#inicio3').val(inicio);
         $(e.currentTarget).find('#fin3').val(fin);
+        $(e.currentTarget).find('#hor_ini2').val(hora_inicio);
+        $(e.currentTarget).find('#hor_fin2').val(hora_fin);
     });
 
 });
