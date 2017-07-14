@@ -24,7 +24,7 @@ class AuthController extends BaseController
 
         if (Auth::attempt(['usuario'=>$usuario, 'password'=>$password]))
         {
-            return redirect('/eventos');
+            return redirect('/home');
         }
 
         return back()->with('msg', 'Datos incorrectos, vuelve a intentarlo.');
