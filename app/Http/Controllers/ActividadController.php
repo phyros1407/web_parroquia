@@ -22,7 +22,7 @@ class ActividadController extends Controller {
 
     public function listar($id_evento){
 
-        $actividades = DB::table('t_actividad')->where('id_evento',$id_evento)->get();
+        $actividades = DB::table('t_actividad')->where('id_evento',$id_evento)->orderBy('inicio')->get();
 
         if($actividades==null){
             return view('actividad')->with(['actividades'=>null,'id_evento'=>$id_evento]);
@@ -48,6 +48,11 @@ class ActividadController extends Controller {
         $id_evento = Input::get('id_evento');
         $titulo = Input::get('titulo');
         $descripcion = Input::get('descripcion');
+
+        if(trim($descripcion)==''){
+            $descripcion = 'Sin descripcion';
+        }
+
         $fecha_inicio = Input::get('fec_ini2');
         $fecha_fin = Input::get('fec_fin2');
         $hora_inicio = Input::get('hor_ini');
@@ -68,6 +73,11 @@ class ActividadController extends Controller {
         $id_evento = Input::get('id_evento');
         $titulo = Input::get('titulo');
         $descripcion = Input::get('descripcion');
+
+        if(trim($descripcion)==''){
+            $descripcion = 'Sin descripcion';
+        }
+
         $fecha_inicio = Input::get('fec_ini');
         $fecha_fin = Input::get('fec_fin');
         $hora_inicio = Input::get('hor_ini');
